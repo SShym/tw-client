@@ -1,0 +1,337 @@
+.product-wrap{
+    height: 100vh;
+    position: relative;
+}
+
+.product{
+    margin: 0px auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-height: calc(100% - 180px);
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+$dash-size: 3px;
+$theme-color: rgb(79, 138, 194);
+$fill-color: beige;
+
+.box {
+    border-radius: 20px;
+	padding: 60px;
+	background: lighten($theme-color, 20%);
+	border: $dash-size dashed $theme-color;
+	box-shadow: 0 0 0 ($dash-size / 2) darken($theme-color, 20%),
+		        0 0 0 ($dash-size * 2.5) #fff,
+		        inset 0 0 0 ($dash-size / 2) darken($theme-color, 20%),
+		        0 $dash-size ($dash-size * 2) ($dash-size * 3) rgba(0,0,0,0.5),
+		        inset 0 0 0 ($dash-size * 1.2) #fff,
+		        inset 0 0 100vw 100vw $fill-color;
+	color: $theme-color;
+	font-family: Marcellus, serif;
+	text-shadow: 0 2px #fff;
+	text-align: center;
+}
+
+.product-information{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 55px;
+    width: 400px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 25px 5px;
+}
+
+.product-img{
+    user-select: none;
+    cursor: zoom-in;
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+}
+
+.product-name{
+    font-family: 'Roboto';
+    font-weight: 400;
+    max-width: 300px;
+    font-size: 25px;
+    margin: 5px 5px 15px 5px;
+}
+
+.product-weight{
+    margin-top: 20px;
+}
+
+.product-name span, .product-author span, .product-weight span{
+    color: gray;
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+.back-arrow{
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: black;
+    border: none;
+    outline: none;
+    background: none;
+    position: absolute;
+    left: 24px;
+    top: 15px;  
+}
+
+.product-favorite{
+    position: absolute;
+    right: -12px;
+    bottom: -15px;
+    background: white;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.product-favorite:hover{
+    background: rgb(194, 194, 194);
+    transition: all 0.1s;
+    transform: scale(1.07);
+}
+
+.product-favorite svg{
+    margin-top: 4px;
+    fill: rgb(247, 126, 126);
+    width: 25px;
+    height: 25px; 
+}
+
+.back-arrow svg{
+    margin-right: 12px;
+}
+
+.fade-in-text {
+    white-space: nowrap;
+    color: rgb(109, 2, 109);
+    text-shadow: 0px 0px 2px;
+    position: absolute;
+    top: 100px;
+    font-size: 0;
+    animation: fade-in 0.6s forwards;
+  }
+  
+  @keyframes fade-in {
+    from {
+      font-size: 0;
+      transform: scale(0) translateY(0px);
+      
+    }
+    to {
+      font-size: 16px;
+      transform: scale(1.8) translateY(-80px);
+
+    }
+  }
+
+$particles: 40;
+$width: 350;
+$height: 350;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+    
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+        
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+    
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+    
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+}
+
+.comments-button-open{
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: rgba(87, 135, 167, 0.767);
+    border-radius: 5px;
+    margin: 12px;
+    padding: 5px;
+}
+
+
+@media (max-width: 1045px) {
+    .product{
+        grid-template-columns: 100%;
+        max-width: 100%;
+    }
+
+    .product-information{
+        font-size: 13px;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .product-name{
+        margin: 0;
+        font-weight: 500;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .fade-in-text{
+        background: rgb(216, 216, 216);
+        border-radius: 10px;
+        padding: 3px 6px;
+    }
+
+    .product-img{
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .box{
+        border-radius: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: gray;
+    }
+
+    .product-name, .product-weight{
+        font-family: Marcellus, serif;
+    }
+
+    .comments-button-open{
+        left: 0;
+        right: none;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-height: 705px) {
+    .box{
+        border-radius: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: gray;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-arrow{
+        font-size: 0px;
+        top: 30px;
+    }
+
+    .back-arrow svg{
+        width: 22px;
+        height: 22px;
+    }
+}

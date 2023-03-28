@@ -1,0 +1,60 @@
+.comments-block-wrap{
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 120px); /* 120px - высота других элементов на странице */
+    overflow-y: auto;
+    background: rgba(53, 53, 53, 0.932);
+    padding: 15px;
+    padding-top: 0;
+    border-radius: 5px;
+}
+
+.comments-block{
+    border-radius: 20px;
+}
+
+.comments-avatar-block{
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.comments-avatar{
+    margin-right: 12px;
+}
+
+.comments-create-block{
+    border: 1px solid rgb(126, 2, 2);
+    display: flex;
+    border-radius: 6px;
+    background-color: aliceblue;
+    position: relative;
+}
+
+.comments-create-block input{
+    background: none;
+    padding: 10px 10px;
+}
+
+.comments-block-wrap h1{
+    text-align: center;
+    text-shadow: 0px 0px 3px red;
+}
+
+.comments-create-block button{
+    border: none;
+    padding: 0px 15px;
+    background-color: rgba(85, 85, 226, 0.295);
+    border-left: 1px solid rgb(126, 2, 2);
+
+}
+
+::-webkit-scrollbar {
+  width: 5px;              
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(202, 13, 13, 0.356);
+  border-radius: 50px;
+}

@@ -1,0 +1,123 @@
+.main-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    margin: 0px auto;
+}
+
+.main-loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.selectedProduct-create-form{
+    box-shadow: 0px 0px 3px red;
+}
+
+.add-product{
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+}
+
+.main-product{
+    position: relative;
+}
+
+.main-product button{
+    user-select: none;
+    z-index: 1;
+}
+
+.main-sort-block{
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -150px;
+    top: -10px;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 3px;
+}
+
+.main-sort-text{
+    font-size: 10px;
+    position: absolute;
+    top: -15px;
+}
+
+.main-delete-selectedProduct-button{
+    position: absolute;
+    right: 0;
+    background: rgba(255, 255, 255, 0.548);
+    border: 1px solid rgb(78, 78, 252);
+    color: rgb(78, 78, 252);
+    font-size: 15px;
+    top: 0;
+}
+
+.main-edit-selectedProduct-button{
+    position: absolute;
+    right: 0;
+    background: rgba(255, 255, 255, 0.548);
+    border: 1px solid rgb(78, 78, 252);
+    color: rgb(78, 78, 252);
+    font-size: 15px;
+    top: 28px;
+}
+
+.main-delete-selectedProduct-button:hover{
+    top: -1px;
+    background-color: aliceblue;
+}
+.main-edit-selectedProduct-button:hover{
+    top: 27px;
+    background-color: aliceblue;
+}
+
+.main-search-profile{
+    position: relative;
+    font-family: 'Roboto';
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.main-search-profile input{
+    user-select: none;
+    background-color: aliceblue;
+    color: rgb(77, 30, 30);
+}
+
+.main-search-profile svg{
+    margin: 0px 10px;
+}
+
+.main-all-products{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 650px;
+    display: flex;
+}
+
+@media (max-width: 640px) {
+    .main-sort-block{
+        left: 0;
+        right: 0;
+        top: 70px;
+    }
+    .main-all-products{
+        margin-top: 75px;
+    }
+    .main-search-profile{
+        width: 85%;
+    }
+}
