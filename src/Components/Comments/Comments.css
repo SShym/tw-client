@@ -5,6 +5,7 @@
     overflow-y: auto;
     background: rgba(53, 53, 53, 0.932);
     padding: 15px;
+    margin: 45px;
     padding-top: 0;
     border-radius: 5px;
 }
@@ -17,7 +18,8 @@
     word-break: break-all;
     display: flex;
     align-items: center;
-    margin: 20px 0px;
+    margin: 20px 15px;
+    max-width: 500px;
 }
 
 .comments-avatar{
