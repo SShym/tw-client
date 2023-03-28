@@ -36,7 +36,7 @@ const Product = ({ product }) => {
                         {product?.name}
                     </Typography>
                     <Typography sx={{ textAlign:'center' }} variant="body2" color="text.secondary">
-                        Вес: {product?.weight}
+                        Weight: {product?.weight}
                     </Typography>
                 </CardContent>
             </Card>
