@@ -67,7 +67,7 @@
     align-items: center;
 }
 
-.profile-block img{
+.profile-img{
     border-radius: 50%;
     width: 32px;
     margin: 0px 8px 0px 15px;
@@ -90,6 +90,7 @@
 
 .profile-block-user{
     display: flex;
+    align-items: center;
 }
 
 .profile-block-favorite{
@@ -110,6 +111,10 @@
     .google-icon{
         width: 25px;
         margin-right: 0px;
+    }
+
+    .profile-img{
+        margin: 0px 12px 0px 15px;
     }
 
     .profile-block-user{

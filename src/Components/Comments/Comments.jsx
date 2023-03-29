@@ -49,7 +49,7 @@ const Comments = ({ comments, setOpenComments, openComments }) => {
                     <div className='comments-block'>
                         {comments.map(comment =>
                             <div className='comments-avatar-block'>
-                                <Avatar src={comment.authorImage} className='comments-avatar'></Avatar>
+                                <Avatar src={comment.authorImage} className='comments-avatar'>{comment.author[0]}</Avatar>
                                 <span>{comment.description}</span>
                                 {console.log(comment)}
                             </div>

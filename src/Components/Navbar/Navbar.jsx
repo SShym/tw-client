@@ -4,6 +4,7 @@ import { GoogleLogin } from 'react-google-login';
 import { ReactComponent as GoogleIcon } from '../../images/google-icon.svg';
 import { ReactComponent as Heart } from '../../images/heart.svg';
 import { useLocation, useNavigate } from "react-router-dom";
+import Avatar from '@mui/material/Avatar';
 import { auth } from '../../redux/actions';
 import { LOGOUT } from '../../redux/actions';
 import { useEffect } from "react";
@@ -52,7 +53,7 @@ const Navbar = () => {
                             </div>
                             <div className='profile-block-user'>
                                 <div className='profile-block'>
-                                    <img alt="useravatar" src={user ? user.imageUrl : user.imageUrl} />
+                                    <Avatar className='profile-img' src={user.imageUrl}>{user.name[0]}</Avatar>
                                     <h1>{user ? user.name : user.name}</h1>
                                 </div>
                                 <div className='profile-block-favorite' onClick={() => navigate('/favorite')}>

@@ -45,7 +45,7 @@ const Favorite = () => {
                     </div>
                     <div style={{ display: 'flex', justifyContent:'center', flexWrap: 'wrap', margin:'0px auto', maxWidth:'800px' }}>
                         {favoriteProducts?.map(product => 
-                            <Card key={product._id} sx={{ borderRadius:'0px', display: 'flex', m: 1.2, width:'100%', maxWidth: 600 }}>
+                            <Card key={product._id} sx={{ borderRadius:'0px', display: 'flex', m: 1.2, width:'100%', maxWidth: 400 }}>
                                 <CardMedia
                                     component="img"
                                     sx={{ width: 200, height: '100%', border:'1px solid gray', borderRight:'none' }}
@@ -59,7 +59,7 @@ const Favorite = () => {
                                     </Typography>
                                     <Box sx={{ display: 'flex', justifyContent: 'center', marginTop:'10px'}}>
                                         <Button onClick={() => handleRemoveFromFavorite(product._id)} variant="outlined" color="error" size="large">
-                                            Удалить
+                                            Delete
                                         </Button>
                                     </Box>
                                     </CardContent>

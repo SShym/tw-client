@@ -8,6 +8,7 @@
     margin: 45px;
     padding-top: 0;
     border-radius: 5px;
+    word-break: break-word;
 }
 
 .comments-block{
@@ -26,6 +27,7 @@
 }
 
 .comments-create-block{
+    white-space: nowrap;
     border: 1px solid rgb(126, 2, 2);
     display: flex;
     border-radius: 6px;
@@ -44,6 +46,8 @@
 }
 
 .comments-create-block button{
+    font-family: 'Roboto';
+    font-weight: 500;
     border: none;
     padding: 0px 15px;
     background-color: rgba(85, 85, 226, 0.295);

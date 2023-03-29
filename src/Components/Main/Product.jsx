@@ -17,7 +17,7 @@ const Product = ({ product }) => {
     const transform = isHovered ? 'scale(1.07)' : 'scale(1)';
   
     return(
-        <div style={{ width: matches ? '87vw' : '210px', padding:'5px' }}>
+        <div style={{ wordBreak:'break-word', width: matches ? '87vw' : '210px', padding:'5px' }}>
             <Card onClick={() => navigate(`/${product._id}`)} sx={{ minWidth: 200, cursor:'pointer', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center' }}>
                 <img 
                     onMouseOver={() => setIsHovered(true)}

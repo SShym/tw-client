@@ -38,7 +38,7 @@ const Product = () => {
                 dispatch(addToFavourite(product));
             }
         } else {
-            setShowError('Sign in!');
+            setShowError('Login!');
         }
     }
 
